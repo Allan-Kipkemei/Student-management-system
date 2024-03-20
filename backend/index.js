@@ -14,7 +14,15 @@ dotenv.config();
 // app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(express.json({ limit: '10mb' }))
-app.use(cors())
+app.use(cors(
+
+
+    {
+        origin: 'https://students-management-dennissystem.vercel.app/', // Replace with your actual Vercel URL
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods (adjust as needed)
+        headers: ['Content-Type', 'Authorization'] // Allowed headers (adjust as needed)
+    }
+))
 
 mongoose
     .connect(process.env.MONGO_URL, {
