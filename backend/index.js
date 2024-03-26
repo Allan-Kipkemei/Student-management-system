@@ -6,7 +6,7 @@ const dotenv = require("dotenv")
 const app = express()
 const Routes = require("./routes/route.js")
 
-const PORT = process.env.PORT || 5002
+const PORT = process.env.PORT || 5003
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ app.use(cors(
 
 
     {
-        origin: 'https://students-management-dennissystem.vercel.app/', // Replace with your actual Vercel URL
+        origin: 'https://students-management-dennissystem.vercel.app', // Replace with your actual Vercel URL
         methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods (adjust as needed)
         headers: ['Content-Type', 'Authorization'] // Allowed headers (adjust as needed)
     }
